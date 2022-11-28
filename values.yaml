@@ -1,0 +1,21 @@
+# Default values for basetextual_helm.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+deployment:
+  name: basetextualweb
+  replicas: 1
+  image: rcarauta/basetextualweb:1.0.0
+  containerPort: 80
+  container:
+    name: server
+
+service:
+  name: basetextualweb-service
+  port: 80
+
+ingress:
+  name: frontend-ingress
+  namespace: default
+  host: localhost
+  path: /
